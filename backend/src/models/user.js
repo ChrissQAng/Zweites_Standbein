@@ -8,6 +8,8 @@ const userSchema = new mongoose.Schema(
     role: { type: String, required: true, enum: ["customer", "admin"] },
     passwordHash: { type: String, required: true, trim: true },
     passwordSalt: { type: String, required: true, trim: true },
+    isEmailVerified: { type: Boolean, default: false },
+    sixDigitCode: { type: String, required: true },
   },
   { collection: "users", timestamps: true }
 );

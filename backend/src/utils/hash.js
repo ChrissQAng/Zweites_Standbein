@@ -4,6 +4,6 @@ export function hash(inputString) {
   return crypto.createHash("sha512").update(inputString).digest("hex");
 }
 
-export function generateRandomSalt() {
+export function generateRandSalt() {
   return crypto.randomBytes(64).toString("hex");
 }

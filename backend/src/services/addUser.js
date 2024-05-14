@@ -1,5 +1,5 @@
 import { User } from "../models/user.js";
-import { generateRandomSalt, hash } from "../utils/hash.js";
+import { generateRandSalt, hash } from "../utils/hash.js";
 import { userToView } from "./help.js";
 
 export async function addUser({ firstName, lastName, email, role, password }) {

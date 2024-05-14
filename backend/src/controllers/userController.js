@@ -3,7 +3,6 @@ import { UserService } from "../services/index.js";
 async function postUserCtrl(req, res) {
   try {
     const newUser = req.body;
-    console.log(newUser);
 
     const addedUser = await UserService.addUser(newUser);
     res.json(addedUser);
@@ -21,7 +20,7 @@ async function loginUserCtrl(req, res) {
       email: req.body.email,
       password: req.body.password,
     };
-    const result = await UserService.loginCustomer(userInfo);
+    const result = await UserService.loginUser(userInfo);
     res.json({ result });
   } catch (err) {
     console.log(err);

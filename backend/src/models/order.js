@@ -6,7 +6,7 @@ const orderSchema = new mongoose.Schema(
       { type: mongoose.Types.ObjectId, ref: "products", required: true },
     ],
     state: { type: String, required: true, enum: ["pending", "complete"] },
-    totalPrice: { type: String, required: true },
+    totalPrice: { type: Number, required: true },
     customerId: { type: mongoose.Types.ObjectId, ref: "users", required: true },
   },
   { collection: "orders", timestamps: true }

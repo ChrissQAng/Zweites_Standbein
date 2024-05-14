@@ -4,8 +4,11 @@ async function postOrderCtrl(req, res) {
   try {
     const newOrder = req.body;
 
-    const addedOrder = await OrderService.addOrder(newProduct);
-    res.json(addedProduct);
+    const addedOrder = await OrderService.addOrder(
+      newOrder,
+      req.authenticatedId
+    );
+    res.json(addedOrder);
   } catch (err) {
     console.log(err);
     res
